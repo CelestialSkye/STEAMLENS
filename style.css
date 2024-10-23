@@ -1,0 +1,486 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-width: 400px;
+}
+
+.SearchBar.button.input {
+    font-size: calc(20px + 0.2vw);
+}
+
+.SearchBar {
+
+    display: fixed;
+    align-items: center;
+    user-select: none;
+    justify-content: center;
+    text-align: center;
+}
+
+#searchInput {
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    width: 300px;
+    outline: none;
+    background-color: #444444;
+}
+
+#searchInput::placeholder {
+    font-size: 14px;
+    color: #888;
+}
+
+#searchButton {
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px 20px;
+    background-color: #444444;
+    color: #f8f9fa;
+    cursor: pointer;
+    margin-left: 10px;
+    outline: none;
+}
+
+#searchButton:hover {
+    background-color: #111111;
+}
+
+#searchInput:hover {
+    background-color: #f8f9fa;
+    transition: all 1s ease;
+}
+
+#searchInput:not(:hover) {
+    transition: all 1s ease;
+}
+
+input[type="text"] {
+    color: #949494;
+    /* Change to any color code or name */
+}
+
+
+/* top bar */
+/* General container styling */
+.topBar {
+
+    display: flex;
+    justify-content: flex-start;
+    /* Align items on the same line with space between */
+    align-items: center;
+    /* Vertically center items */
+    max-width: 1200px;
+    /* Limit the total width of the topBar */
+    margin: 0 auto;
+    /* Center it on the page */
+    padding: 10px;
+    /* Optional padding for spacing */
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+/* Styling for the Back to Index link */
+.back-to-index {
+    text-decoration: none;
+    color: #000;
+    /* Change to your preferred color */
+    font-size: 1.2rem;
+    /* Adjust size as needed */
+}
+
+/* Styling for the search bar */
+.SearchBar {
+    display: flex;
+    align-items: right;
+    /* Vertically center input and button */
+    margin-left: auto;
+}
+
+.SearchBar input {
+    padding: 5px;
+    font-size: 1rem;
+    /* Adjust size if needed */
+}
+
+.SearchBar button {
+    padding: 5px 10px;
+    font-size: 1rem;
+    /* Match button size with input */
+    cursor: pointer;
+}
+
+
+
+
+#container {
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 100px;
+    border: none;
+}
+
+/* Container settings */
+.container {
+    max-width: 1200px;
+    margin: auto;
+
+    border: none;
+}
+
+/* Grid layout for game sections */
+#gameResults,
+#popularGames,
+#newlyReleasedGames {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    /* Space between cards */
+}
+
+/* Card styles */
+.card {
+    position: relative;
+    /* Important for overlay positioning */
+    box-sizing: border-box;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    /* Prevent overflow of image content */
+
+
+
+
+
+
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Increase box shadow on hover */
+    scale: 1.05;
+    transition: all 0.3s ease;
+}
+
+.card:not(hover) {
+    transition: all 0.3s ease;
+}
+
+/* Set the image to take full card size */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the whole card */
+    display: block;
+    /* Remove bottom spacing of images */
+    border-radius: 8px;
+
+
+}
+
+/* Overlay with info, positioned on top of the image */
+.card .overlay {
+    position: absolute;
+    bottom: 0;
+    /* Positioned at the bottom of the card */
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 90%);
+    /* Dark background for visibility */
+    color: white;
+    padding: 10px;
+    border-radius: 0 0 8px 8px;
+    /* Round bottom corners */
+    text-align: left;
+    font-size: 14px;
+    z-index: 1;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+    /* Show on hover */
+}
+
+/* Media query for medium screens (2 cards per row) */
+@media (max-width: 992px) {
+
+
+    #gameResults,
+    #popularGames,
+    #newlyReleasedGames {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cards per row */
+    }
+
+    .card img {
+        max-height: 180px;
+    }
+}
+
+/* Media query for small screens (1 card per row) */
+@media (max-width: 620px) {
+
+    h2 {
+        font-size: 25px !important;
+    }
+
+    h1 {
+        font-size: 25px !important;
+    }
+
+
+
+    #searchInput {
+        width: 150px;
+    }
+
+
+
+    #gameResults,
+    #popularGames,
+    #newlyReleasedGames {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+    }
+
+    .card img {
+        max-height: 150px;
+
+    }
+
+    #container {
+        text-align: center;
+        margin: auto;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        min-width: 200px;
+
+
+    }
+
+    #gameResults,
+    #popularGames,
+    #newlyReleasedGames {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+    }
+
+    .card img {
+        max-height: 150px;
+    }
+}
+
+/* Media query for small screens (1 card per row) */
+@media (max-width: 412px) {
+
+    h2 {
+        font-size: 15px;
+    }
+
+
+
+
+    #searchInput {
+        width: 150px !important;
+    }
+
+
+
+    #gameResults,
+    #popularGames,
+    #newlyReleasedGames {
+        grid-template-columns: 1fr;
+        /* 1 card per row */
+    }
+
+    .card img {
+        max-height: 150px;
+    }
+}
+
+h1 {
+
+    text-align: left;
+    font-family: "Fjalla One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 30px;
+    font-size: 24;
+
+}
+
+h2 {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+
+
+}
+
+.gameName {
+    font-size: calc(15px + 0.9vw);
+}
+
+
+.header-link {
+    text-decoration: none;
+    /* Removes underline */
+    color: inherit;
+    /* Inherit the text color */
+    margin-right: 20px;
+}
+
+
+p {
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: calc(8px + 0.2vw);
+
+}
+
+/* Styling details */
+.screenshots {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    /* Allow items to wrap */
+    gap: 10px;
+    /* Space between items */
+    justify-content: center;
+    /* Center the items horizontally */
+    margin: 0 auto;
+    /* Ensure the container is centered */
+}
+
+.zoomable-image {
+    cursor: zoom-in;
+    position: relative;
+    margin: 10px;
+    flex: 1 1 calc(50% - 10px);
+    /* Takes up 50% of the width minus the gap */
+    box-sizing: border-box;
+    /* Prevents the images from overflowing */
+    z-index: 1;
+    /* Default z-index */
+    transition: z-index 0s ease-in-out 0.8s;
+    /* Delay the z-index reset after the zoom-out */
+}
+
+.zoomable-image.zoomed {
+    cursor: zoom-out;
+    z-index: 100;
+    /* When zoomed in, make sure it's on top */
+    position: relative;
+    transform-origin: center;
+    /* Zoom from the center */
+    transition: transform 0.8s ease-in-out, z-index 0s ease-in-out;
+    /* Smooth zoom-in */
+}
+
+.zoomable-image img {
+    width: 100%;
+    /* Make sure the image takes full width of its container */
+    height: auto;
+    /* Maintain the aspect ratio */
+    object-fit: cover;
+    /* Ensures the image fits within the container */
+}
+
+
+.image-backdrop {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark backdrop */
+    z-index: 50;
+    transition: opacity 0.5s ease-in-out;
+    /* Smooth opacity transition */
+}
+
+.image-backdrop.zoomed {
+    display: block;
+    /* Show when image is zoomed */
+    opacity: 1;
+}
+
+footer {
+    background-color: #f8f9fa;
+    /* Light background for the footer */
+    padding: 20px 0;
+    /* Padding to give space inside the footer */
+    text-align: center;
+    /* Center align the text and icons */
+}
+
+.footer {
+    display: flex;
+    /* Flexbox for horizontal alignment */
+    justify-content: center;
+    /* Centers items horizontally */
+    align-items: center;
+    /* Aligns items vertically */
+    gap: 15px;
+    /* Adds space between text and icons */
+    flex-wrap: wrap;
+    /* Allows wrapping on smaller screens */
+}
+
+.footer p {
+    margin: 0;
+    /* Removes default margin */
+    font-size: 16px;
+    /* Adjusts the font size */
+    color: #333;
+    /* Dark grey color */
+}
+
+.github,
+.linkedin {
+    display: inline-block;
+    /* Ensures the SVG is treated as inline-block */
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    /* Removes underline from links */
+}
+
+.github svg,
+.linkedin svg {
+    width: 40px;
+    /* Icon size */
+    height: 40px;
+    fill: #333;
+    /* Dark grey for the icons */
+    transition: fill 0.3s ease;
+    /* Adds a smooth transition for hover effect */
+}
+
+.github:hover svg,
+.linkedin:hover svg {
+    fill: #0079d3;
+    /* Changes color to blue on hover */
+}

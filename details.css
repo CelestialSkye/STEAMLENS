@@ -1,0 +1,440 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    min-width: 400px;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+
+/* Styling details */
+
+
+
+
+#game-details {
+    width: 100%;
+    /* Make sure it takes full width */
+    max-width: 1200px;
+    /* Optional: limit the maximum width */
+    display: flex;
+    margin: 0 auto;
+    /* Centering */
+}
+
+img {
+    max-width: 100%;
+    /* Prevent image from growing beyond its container */
+    height: auto;
+    /* Keep the aspect ratio */
+    display: block;
+    /* Remove inline spacing */
+    margin: 0 auto;
+    /* Center the image */
+}
+
+
+.left-column {
+    width: 60%;
+    /* Left column takes 60% of the total width */
+    background-color: #f8f9fa;
+    /* Optional: Background color for visibility */
+    margin-right: 5px;
+
+}
+
+.right-column {
+    width: 40%;
+    /* Right column takes 40% of the total width */
+    background-color: #f8f9fa;
+    /* Optional: Background color for visibility */
+
+
+
+}
+
+
+
+.reddit-post {
+    width: 1200px;
+    /* Full width of 1200px */
+    background-color: #f8f9fa;
+    /* Optional: Background color */
+    padding: 20px;
+    /* Optional: Padding for spacing */
+    margin: 0 auto;
+    /* Centers the section if it's inside a larger container */
+}
+
+
+img {
+    max-width: 100%;
+    /* Set the maximum width of the image */
+    height: auto;
+    /* Set the height to auto to keep aspect ratio */
+}
+
+@media (max-width: 1200px) {
+    #game-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* Make sure the width adjusts to fit the screen */
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        /* Set both columns to take full width in the smaller screen */
+    }
+}
+
+
+/* Styling gallery */
+
+/* .screenshots {
+    display: relative;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery-item {
+    width: 45%;
+    
+}
+
+.hidden {
+    display: none;
+} */
+
+/* Flexbox layout for gallery */
+/* .img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    transition: transform 0.8s ease-in-out;
+} */
+
+
+.zoomable-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Full width relative to the parent */
+
+    /* Limit width to 90% of the parent */
+    position: relative;
+    margin: 0 auto;
+    /* Center the container horizontally */
+    overflow: hidden;
+    /* Prevent image overflow */
+    box-sizing: border-box;
+    /* Make sure padding/borders don't affect the width */
+    margin-top: 5px;
+    right: 0;
+    /* Aligns the div to the right edge of the parent */
+
+
+}
+
+
+
+
+.zoomable-img {
+    max-width: 100%;
+    /* Ensure the image stays within container */
+    width: auto;
+    /* Allow the image to maintain its natural width */
+    height: auto;
+    margin: auto;
+    padding: 0;
+    margin: 0;
+}
+
+
+.zoomable-image.zoomed {
+    cursor: zoom-out;
+    z-index: 100;
+    position: relative;
+    transform-origin: center center;
+    /* Zoom from the center */
+    transition: transform 0.8s ease-in-out;
+    /* Smooth zoom-in */
+
+}
+
+.image-backdrop {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark backdrop */
+    z-index: 50;
+    transition: opacity 0.5s ease-in-out;
+    /* Smooth opacity transition */
+}
+
+.image-backdrop.zoomed {
+    display: block;
+    /* Show when image is zoomed */
+    opacity: 1;
+}
+
+
+.reddit-post {
+    max-width: 100%;
+    /* Ensure the container takes full width */
+    padding: 10px;
+    /* Padding around the post for spacing */
+    box-sizing: border-box;
+    margin: 0 auto;
+    /* Center the container horizontally */
+}
+
+.reddit-post-image {
+    width: 100%;
+    /* Make the image take up the full width of its container */
+    height: auto;
+    /* Maintain the aspect ratio */
+    display: block;
+    /* Ensure the image acts like a block element */
+    margin: 0 auto;
+    /* Center the image horizontally */
+}
+
+/* .SCpicture {
+    width: 200px !important;
+
+} */
+
+#screenshots {
+    margin-top: 43px;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+    gap: 10px;
+}
+
+.tags .tag {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+}
+
+.tags {
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.description {
+    width: 90%;
+    word-wrap: break-word;
+    line-height: 1.6;
+    font-size: 1rem;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 10px;
+
+
+}
+
+
+
+.Playtime {
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+
+.gameReleaseDate {
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+
+}
+
+.gameHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameName {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 35px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 10px;
+}
+
+.gameRating {
+    display: flex;
+    align-items: center;
+    font-size: 25px !important;
+}
+
+.gameRating i {
+    margin-right: 5px;
+}
+
+.genres {
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.metaScore {
+
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    font-size: 40px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.metaScore {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.metaLogo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+#trailers {
+    margin-left: 5px;
+}
+
+.reddit-post {
+    width: 1200px;
+    border: 1px solid #e1e1e1;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.reddit-post h3 {
+    max-height: 3em;
+    /* Adjust the height to limit the visible text */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Limits the text to 2 lines */
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+/* Container for the image to handle resizing and blurred background */
+.reddit-post-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    /* Adjust the height as needed */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.reddit-post-image {
+    max-width: 70%;
+    /* Make the image smaller */
+    max-height: 100%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+/* Blurred background for smaller images */
+.reddit-post-image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: inherit;
+    filter: blur(20px);
+    z-index: 0;
+}
+
+.reddit-post p {
+    margin: 10px 0;
+    color: #555;
+}
+
+.reddit-post a {
+    color: #0079d3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.reddit-post-title {
+    font-size: 35px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.reddit-post h3 {
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.reddit-post h4 {
+    font-size: 20px;
+    font-family: "Fira Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
